@@ -13,15 +13,15 @@
       <div class="bold-600 mr-4">Почта:</div>
       <div>{{userInfo.data.email}}</div>
     </div>
-    <button class="mb-14" mat-flat-button color="warn" (click)="changeUserInfo()">{{nameBtn}}</button>
+    <button class="mb-14 " mat-flat-button color="warn" (click)="changeUserInfo()">{{nameBtn}}</button>
     <ng-container *ngIf="!isToChange else changeInfo">
     </ng-container>
   </div>
 </ng-container>
 
 <ng-template #loadingData>
-  <div class="df jcc pt-8">
-    <mat-spinner diameter="26"></mat-spinner>
+  <div class="df jcc pt-8 aic h100p w100p">
+    <mat-spinner diameter="100"></mat-spinner>
   </div>
 </ng-template>
 

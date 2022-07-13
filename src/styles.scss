@@ -16,7 +16,11 @@ app-root,
 mat-sidenav-container,
 app-main,
 mat-sidenav-content,
-.content {
+.content,
+mat-grid-list,
+app-users,
+app-resources,
+app-info-user {
   display: flex !important;
   flex: 1;
   flex-direction: column;
@@ -28,7 +32,7 @@ body {
 }
 
 .content {
-  max-width: 1300px;
+  max-width: 1208px;
   width: 1300px;
   margin: 0 auto;
   padding: 16px 16px 0;
@@ -41,8 +45,12 @@ body {
   }
 }
 
-.button {
-  background-color: #86b940;
+.mat-drawer {
+  background-color: rgb(232, 244, 255);
+}
+
+.mat-drawer-container {
+  background-color: #ffffff;
 }
 
 mat-form-field {

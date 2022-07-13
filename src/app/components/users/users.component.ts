@@ -9,7 +9,7 @@ import {InfoService, IUsers} from "../../core/service/info.service";
 })
 export class UsersComponent implements OnInit {
   listOfUsers: IUsers = null;
-  isLoading: boolean = false;
+  isLoading: boolean = true;
   currentPage: number
 
   constructor(

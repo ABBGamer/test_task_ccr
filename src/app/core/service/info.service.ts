@@ -100,14 +100,15 @@ export class InfoService {
     return this._http.delete<IUserInfo>(url, {headers: headers}).pipe(take(1))
   }
 
-  changeUserInfo(id: number, first_name: string, last_name: string, email: string, avatar: string) {
-    const url = LINK + 'api/users/' + id;
+  changeUserInfo(changedInfo:IUser) {
+  // changeUserInfo(id: number, first_name: string, last_name: string, email: string, avatar: string) {
+    const url = LINK + 'api/users/' + changedInfo.id;
     let userInfo = {
-      "id": id,
-      "email": email,
-      "first_name": first_name,
-      "last_name": last_name,
-      "avatar": avatar
+      "id": changedInfo.id,
+      "email": changedInfo.email,
+      "first_name": changedInfo.first_name,
+      "last_name": changedInfo.last_name,
+      "avatar": changedInfo.avatar
     }
 
     const headers = {

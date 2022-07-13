@@ -8,7 +8,7 @@ import {InfoService, IResources} from "../../core/service/info.service";
 })
 export class ResourcesComponent implements OnInit {
   listOfRes: IResources = null;
-  isLoading: boolean = false;
+  isLoading: boolean = true;
 
   constructor(
     private _info: InfoService
