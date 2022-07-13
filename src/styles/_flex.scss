@@ -1,0 +1,75 @@
+.db {
+  display: block;
+}
+
+.df {
+  display: flex !important;
+}
+
+.fxdr {
+  flex-direction: row;
+}
+
+.fxdrr {
+  flex-direction: row-reverse;
+}
+
+.fxdc {
+  flex-direction: column;
+}
+
+.fxdcr {
+  flex-direction: column-reverse;
+}
+
+.aic {
+  align-items: center;
+}
+
+.aifs {
+  align-items: flex-start;
+}
+
+.aife {
+  align-items: flex-end;
+}
+
+.ais {
+  align-items: stretch;
+}
+
+.jcfs {
+  justify-content: flex-start;
+}
+
+.jcfe {
+  justify-content: flex-end;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcsa {
+  justify-content: space-around;
+}
+
+.tac {
+  text-align: center;
+}
+
+.fww {
+  flex-wrap: wrap;
+}
+
+.fwn {
+  flex-wrap: nowrap;
+}
+
+.flex1 {
+  flex: 1;
+}

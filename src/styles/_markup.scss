@@ -1,0 +1,77 @@
+@each $i in 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 60, 64, 72, 80, 90, 96 {
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .m-#{$i} {
+    margin: #{$i}px !important;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .p-#{$i} {
+    padding: #{$i}px !important;
+  }
+  .p-lr-#{$i} {
+    @extend .pl-#{$i};
+    @extend .pr-#{$i};
+  }
+  .p-tb-#{$i} {
+    @extend .pt-#{$i};
+    @extend .pb-#{$i};
+  }
+  .m-lr-#{$i} {
+    @extend .ml-#{$i};
+    @extend .mr-#{$i};
+  }
+  .m-tb-#{$i} {
+    @extend .mt-#{$i};
+    @extend .mb-#{$i};
+  }
+}
+
+@each $i in 4, 8, 12, 16, 20, 24, 34, 43, 50 {
+  .brs-#{$i} {
+    border-radius: #{$i}px !important;
+  }
+}
+
+
+.w100p {
+  width: 100% !important;
+}
+
+.h100p {
+  height: 100% !important;
+}
+
+.pos {
+  &-r {
+    position: relative;
+  }
+
+  &-a {
+    position: absolute;
+  }
+
+  &-f {
+    position: fixed;
+  }
+}

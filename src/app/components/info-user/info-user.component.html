@@ -1,0 +1,42 @@
+<ng-container *ngIf="!isLoading else loadingData">
+  <div class="df fxdc aic ">
+    <img class="mb-16" [src]='userInfo.data.avatar'>
+    <div class="df fxdr">
+      <div class="bold-600 mr-4">ID:</div>
+      {{userInfo.data.id}}
+    </div>
+    <div class="df fxdr">
+      <div class="bold-600 mr-4">Имя пользователя:</div>
+      <div>{{userInfo.data.first_name}} {{userInfo.data.last_name}}</div>
+    </div>
+    <div class="df fxdr mb-14">
+      <div class="bold-600 mr-4">Почта:</div>
+      <div>{{userInfo.data.email}}</div>
+    </div>
+    <button class="mb-14" mat-flat-button color="warn" (click)="changeUserInfo()">{{nameBtn}}</button>
+    <ng-container *ngIf="!isToChange else changeInfo">
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-template #loadingData>
+  <div class="df jcc pt-8">
+    <mat-spinner diameter="26"></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #changeInfo>
+  <mat-form-field appearance="outline">
+    <mat-label>Имя:</mat-label>
+    <input matInput [formControl]="first_name">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Фамилия:</mat-label>
+    <input matInput [formControl]="last_name">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Почта:</mat-label>
+    <input matInput [formControl]="email">
+  </mat-form-field>
+  <button class="mb-14" mat-flat-button color="warn" (click)="saveUserInfo()">Сохранить</button>
+</ng-template>

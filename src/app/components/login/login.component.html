@@ -1,0 +1,26 @@
+<div class="content df fxdc aic pt-20 fg">
+  <h1>Авторизация</h1>
+
+  <div class="df fxdc">
+    <mat-form-field appearance="outline">
+      <mat-label>Логин:</mat-label>
+      <input matInput [formControl]="login" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Пароль:</mat-label>
+      <input matInput [formControl]="pass" [type]="isVisible ? 'password' : 'text'" required>
+      <button mat-icon-button matSuffix (click)="isVisible = !isVisible">
+        <mat-icon>{{isVisible ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <ng-container *ngIf="!isLoading else loadingData">
+      <button class="color-white" color="primary" mat-flat-button (click)="checkUser()">Войти</button>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #loadingData>
+  <div class="df jcc pt-8">
+    <mat-spinner diameter="26"></mat-spinner>
+  </div>
+</ng-template>

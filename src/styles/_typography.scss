@@ -1,0 +1,110 @@
+@use 'sass:math';
+
+@mixin font-size($sizeValue) {
+  font-size: ($sizeValue) + px;
+  font-size: math.div($sizeValue, 10) + rem;
+}
+
+@mixin line-height($heightValue) {
+  line-height: ($heightValue) + px;
+  line-height: math.div($heightValue, 10) + rem;
+}
+
+
+@each $i in 12, 14, 16, 18, 20, 22, 24, 32, 36, 40, 48, 56, 64 {
+  .fz-#{$i} {
+    @include font-size($i);
+    @include line-height($i + 2);
+  }
+}
+
+
+.bold {
+  font-weight: 500;
+
+  &-600 {
+    font-weight: 600;
+  }
+}
+
+.color {
+  &-black {
+    color: black;
+  }
+
+  &-white {
+    color: white;
+  }
+
+  &-green {
+    color: #7AD06D;
+  }
+
+  &-blue {
+    color: #108ACF;
+  }
+
+  &-light-gray {
+    color: #66737B;
+  }
+
+  &-gray {
+    color: #848484;
+  }
+
+  &-orange {
+    color: #EB6417;
+  }
+
+  &-bg {
+    &-white {
+      background-color: white;
+    }
+
+    &-blue {
+      background-color: #0B7FC0;
+    }
+
+    &-light-blue {
+      background-color: #F2F5F6
+    }
+
+    &-light-gray {
+      background-color: #F2F5F6;
+    }
+
+    &-not-light-gray {
+      background-color: #dbdbdb;
+    }
+
+    &-gray {
+      background-color: #848484;
+    }
+
+    &-dark-gray {
+      background-color: #181D20;
+    }
+
+    &-black {
+      background-color: #020202;
+    }
+
+    &-orange {
+      background-color: #EB6417;
+    }
+
+    &-green {
+      background-color: #86b940;
+    }
+  }
+}
+
+.cur {
+  &-d {
+    cursor: default;
+  }
+
+  &-p {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,20 @@
+<ng-container *ngIf="!isLoading else loadingData">
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <div *ngFor="let item of listOfRes?.data;let i=index">
+      <mat-grid-tile [style.background-color]="item.color">
+        <div class="df fxdc aic cur-p p-tb-24">
+          <div class="bold-600">{{item.name}}</div>
+          <div class="df fxdc aic">
+            <div>{{item.color}}</div>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</ng-container>
+
+<ng-template #loadingData>
+  <div class="df jcc pt-8">
+    <mat-spinner diameter="26"></mat-spinner>
+  </div>
+</ng-template>

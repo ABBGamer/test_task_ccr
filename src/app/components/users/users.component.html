@@ -1,0 +1,29 @@
+<ng-container *ngIf="!isLoading else loadingData">
+  <mat-grid-list cols="3" rowHeight="333px">
+    <div *ngFor="let item of listOfUsers?.data;let i=index">
+      <mat-grid-tile>
+        <div class="df fxdc aic cur-p " (click)="navigateTo('info/'+item.id)">
+          <div class="bold-600 pb-12">{{item.first_name}} {{item.last_name}}</div>
+          <div class="pb-6"><img [src]="item.avatar"></div>
+          <div class="df fxdc aic">
+            <div class="mb-12">{{item.email}}</div>
+            <button class="mb-8" mat-flat-button color="warn" (click)="deleteUser(i)">Delete</button>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</ng-container>
+
+<mat-paginator [length]="listOfUsers?.total"
+               [pageSize]="6"
+               aria-label="Select page"
+               (page)="currentPage=$event.pageIndex+1; getUserInfo()">
+</mat-paginator>
+
+
+<ng-template #loadingData>
+  <div class="df jcc pt-8">
+    <mat-spinner diameter="26"></mat-spinner>
+  </div>
+</ng-template>

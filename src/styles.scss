@@ -1,4 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/customItems";
+@import "styles/flex";
+@import "styles/markup";
+@import "styles/scrollbar";
+@import "styles/typography";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+
+body,
+app-root,
+mat-sidenav-container,
+app-main,
+mat-sidenav-content,
+.content {
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content {
+  max-width: 1300px;
+  width: 1300px;
+  margin: 0 auto;
+  padding: 16px 16px 0;
+}
+
+* {
+  font-size: 16px;
+  @media (max-width: 700px) {
+    font-size: 32px;
+  }
+}
+
+.button {
+  background-color: #86b940;
+}
+
+mat-form-field {
+  &.no-error {
+    .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+  }
+}
